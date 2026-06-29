@@ -26,6 +26,10 @@
 		A10000000000000000000011 /* HotkeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000011 /* HotkeyManager.swift */; };
 		A10000000000000000000012 /* FileOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000012 /* FileOpener.swift */; };
 		A10000000000000000000013 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000013 /* Extensions.swift */; };
+		A10000000000000000000017 /* LaunchAtLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000017 /* LaunchAtLoginManager.swift */; };
+		A10000000000000000000018 /* SearchProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000018 /* SearchProgress.swift */; };
+		A10000000000000000000019 /* SearchProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000019 /* SearchProgressView.swift */; };
+		A1000000000000000000001A /* RankingResponseSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000001A /* RankingResponseSchema.swift */; };
 		A10000000000000000000014 /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = A50000000000000000000001 /* HotKey */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +53,10 @@
 		A20000000000000000000011 /* HotkeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyManager.swift; sourceTree = "<group>"; };
 		A20000000000000000000012 /* FileOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileOpener.swift; sourceTree = "<group>"; };
 		A20000000000000000000013 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A20000000000000000000017 /* LaunchAtLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLoginManager.swift; sourceTree = "<group>"; };
+		A20000000000000000000018 /* SearchProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProgress.swift; sourceTree = "<group>"; };
+		A20000000000000000000019 /* SearchProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProgressView.swift; sourceTree = "<group>"; };
+		A2000000000000000000001A /* RankingResponseSchema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingResponseSchema.swift; sourceTree = "<group>"; };
 		A20000000000000000000014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A20000000000000000000015 /* HayStack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HayStack.entitlements; sourceTree = "<group>"; };
 		A20000000000000000000016 /* HayStack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HayStack.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +114,7 @@
 				A20000000000000000000005 /* ResultRow.swift */,
 				A20000000000000000000006 /* ResultsList.swift */,
 				A20000000000000000000007 /* SettingsView.swift */,
+				A20000000000000000000019 /* SearchProgressView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -118,6 +127,7 @@
 				A2000000000000000000000A /* PathFilter.swift */,
 				A2000000000000000000000B /* MetadataEnricher.swift */,
 				A2000000000000000000000C /* SearchCoordinator.swift */,
+				A20000000000000000000018 /* SearchProgress.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -128,6 +138,7 @@
 				A2000000000000000000000D /* OllamaClient.swift */,
 				A2000000000000000000000E /* RankingPrompt.swift */,
 				A2000000000000000000000F /* RankedResult.swift */,
+				A2000000000000000000001A /* RankingResponseSchema.swift */,
 			);
 			path = Ranking;
 			sourceTree = "<group>";
@@ -137,6 +148,7 @@
 			children = (
 				A20000000000000000000010 /* UserSettings.swift */,
 				A20000000000000000000011 /* HotkeyManager.swift */,
+				A20000000000000000000017 /* LaunchAtLoginManager.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -227,6 +239,10 @@
 				A10000000000000000000011 /* HotkeyManager.swift in Sources */,
 				A10000000000000000000012 /* FileOpener.swift in Sources */,
 				A10000000000000000000013 /* Extensions.swift in Sources */,
+				A10000000000000000000017 /* LaunchAtLoginManager.swift in Sources */,
+				A10000000000000000000018 /* SearchProgress.swift in Sources */,
+				A10000000000000000000019 /* SearchProgressView.swift in Sources */,
+				A1000000000000000000001A /* RankingResponseSchema.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,6 +4,7 @@ import SwiftUI
 @MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate {
     let settings = UserSettings()
+    let launchAtLogin = LaunchAtLoginManager()
     lazy var coordinator = SearchCoordinator(settings: settings)
     lazy var searchPanelController = SearchPanelController(coordinator: coordinator)
     lazy var hotkeyManager = HotkeyManager()
@@ -27,7 +28,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     func openSettings() {
         if settingsWindow == nil {
-            let view = SettingsView(settings: settings, coordinator: coordinator)
+            let view = SettingsView(
+                settings: settings,
+                coordinator: coordinator,
+                launchAtLogin: launchAtLogin
+            )
                 .onChange(of: settings.hotkeyKeyCode) { [weak self] _, _ in self?.registerHotkey() }
                 .onChange(of: settings.hotkeyModifiers) { [weak self] _, _ in self?.registerHotkey() }
 

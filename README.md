@@ -53,6 +53,8 @@ ollama pull llama3.2:1b
 4. If the global hotkey (`⌥ Space` by default) does not work, grant **Accessibility** permission:
    **System Settings → Privacy & Security → Accessibility** → add Xcode (while developing) or HayStack (if running a built `.app`).
 
+5. For day-to-day use, install `HayStack.app` to `/Applications`, then enable **Open at Login** in HayStack Settings. macOS may ask you to approve the login item under **System Settings → General → Login Items**.
+
 ### Unsigned app note
 
 HayStack is distributed as source only. If you build a standalone `.app` (see [Build & Distribution](#build--distribution) below), macOS may block it on first launch because it is not signed or notarized. Right-click the app and choose **Open**, or allow it under **System Settings → Privacy & Security**.

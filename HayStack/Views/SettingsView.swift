@@ -5,8 +5,10 @@ import SwiftUI
 struct SettingsView: View {
     @ObservedObject var settings: UserSettings
     @ObservedObject var coordinator: SearchCoordinator
+    @ObservedObject var launchAtLogin: LaunchAtLoginManager
 
     @State private var healthMessage: String = "Checking Ollama..."
+    @State private var launchAtLoginError: String?
 
     private let hotkeyPresets: [(name: String, keyCode: UInt32, modifiers: UInt32)] = [
         ("⌥ Space", UInt32(kVK_Space), UInt32(NSEvent.ModifierFlags.option.rawValue)),
@@ -17,6 +19,19 @@ struct SettingsView: View {
 
     var body: some View {
         Form {
+            Section("General") {
+                Toggle("Open at Login", isOn: launchAtLoginBinding)
+                if let launchAtLoginError {
+                    Text(launchAtLoginError)
+                        .font(.caption)
+                        .foregroundStyle(.red)
+                } else if let message = launchAtLogin.statusMessage {
+                    Text(message)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+            }
+
             Section("Hotkey") {
                 Picker("Global shortcut", selection: hotkeySelection) {
                     ForEach(hotkeyPresets, id: \.name) { preset in
@@ -84,9 +99,10 @@ struct SettingsView: View {
             }
         }
         .formStyle(.grouped)
-        .frame(width: 520, height: 480)
+        .frame(width: 520, height: 520)
         .padding()
         .onAppear {
+            launchAtLogin.refreshStatus()
             Task { await refreshHealth() }
         }
         .onChange(of: settings.ollamaEndpoint) { _, _ in
@@ -95,6 +111,20 @@ struct SettingsView: View {
         .onChange(of: settings.ollamaModel) { _, _ in
             Task { await refreshHealth() }
         }
+    }
+
+    private var launchAtLoginBinding: Binding<Bool> {
+        Binding(
+            get: { launchAtLogin.isEnabled },
+            set: { newValue in
+                launchAtLoginError = nil
+                do {
+                    try launchAtLogin.setEnabled(newValue)
+                } catch {
+                    launchAtLoginError = error.localizedDescription
+                }
+            }
+        )
     }
 
     private var hotkeySelection: Binding<String> {

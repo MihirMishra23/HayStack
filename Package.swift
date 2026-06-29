@@ -23,6 +23,7 @@ let package = Package(
                 .linkedFramework("SwiftUI"),
                 .linkedFramework("CoreServices"),
                 .linkedFramework("Carbon"),
+                .linkedFramework("ServiceManagement"),
             ]
         ),
     ]
