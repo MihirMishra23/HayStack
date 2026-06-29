@@ -1,5 +1,7 @@
 # HayStack — Smart macOS File Search
 
+**Build from source** — clone this repo and run in Xcode. There is no pre-built download.
+
 ## What This Is
 
 A macOS menu bar app that replaces Finder search with AI-reranked results. The user presses a global hotkey, a floating search panel appears, they type a natural language query, and results appear ranked by actual relevance using a local LLM via Ollama.
@@ -20,6 +22,43 @@ The menu bar icon provides access to settings: hotkey customization, excluded di
 
 ---
 
+## Build from Source
+
+### Prerequisites
+
+- macOS 14+
+- Xcode 15+
+- [Ollama](https://ollama.com) installed and running
+- At least one model pulled (default: `llama3.2:1b`)
+
+### Steps
+
+1. Clone the repo:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/HayStack.git
+cd HayStack
+```
+
+2. Install and start Ollama:
+
+```bash
+brew install ollama
+ollama serve          # keep running in a terminal
+ollama pull llama3.2:1b
+```
+
+3. Open `HayStack.xcodeproj` in Xcode and press `⌘R` to build and run.
+
+4. If the global hotkey (`⌥ Space` by default) does not work, grant **Accessibility** permission:
+   **System Settings → Privacy & Security → Accessibility** → add Xcode (while developing) or HayStack (if running a built `.app`).
+
+### Unsigned app note
+
+HayStack is distributed as source only. If you build a standalone `.app` (see [Build & Distribution](#build--distribution) below), macOS may block it on first launch because it is not signed or notarized. Right-click the app and choose **Open**, or allow it under **System Settings → Privacy & Security**.
+
+---
+
 ## Tech Stack
 
 | Layer | Technology | Reason |
@@ -29,7 +68,7 @@ The menu bar icon provides access to settings: hotkey customization, excluded di
 | Spotlight Access | `NSMetadataQuery` or shelling out to `mdfind` | Built-in macOS file indexing |
 | Metadata Enrichment | `mdls` via Process or `MDItemCopyAttributes` | Get content type, authors, page count, text snippets |
 | LLM Reranking | Ollama REST API (`http://localhost:11434/api/generate`) | Local, private, no API key needed |
-| Distribution | Notarized `.dmg` outside App Store | Avoids sandbox restrictions on Spotlight and localhost |
+| Distribution | Source-only (build in Xcode) | No paid Apple Developer account required |
 
 ---
 
@@ -245,7 +284,7 @@ Focus exclusively on these features for the first release:
 - Arrow key navigation + Enter to open + ⌘Enter to reveal in Finder
 - Settings: hotkey, model name, excluded folders
 - Graceful handling when Ollama is not running
-- Notarized `.dmg` for distribution
+- Build-from-source distribution via GitHub
 
 ### Explicitly NOT in v1
 
@@ -263,22 +302,23 @@ Focus exclusively on these features for the first release:
 
 ### Development
 
-1. Open `HayStack.xcodeproj` in Xcode 15+
-2. Build and run (macOS 14+ deployment target)
-3. Grant Accessibility permission if prompted (required for global hotkeys)
-4. Install Ollama and pull a model:
-
-```bash
-brew install ollama
-ollama serve
-ollama pull llama3.2:1b
-```
+Open `HayStack.xcodeproj` in Xcode 15+, build and run (`⌘R`). See [Build from Source](#build-from-source) above for full setup.
 
 HayStack uses the [HotKey](https://github.com/soffes/HotKey) Swift package for global shortcuts. App Sandbox is disabled so Spotlight, localhost Ollama, and file open/reveal work outside the App Store.
 
-### Release
+### Optional: local `.app` build
 
-Use the release script after configuring code signing:
+To produce a standalone `.app` and `.dmg` locally (unsigned):
+
+```bash
+SKIP_NOTARIZE=1 ./scripts/release.sh Debug
+```
+
+Output lands in `build/HayStack.dmg`. Expect macOS Gatekeeper warnings on first launch — right-click → **Open**.
+
+### Optional: signed release (requires Apple Developer account)
+
+If you have a Developer ID certificate, `scripts/release.sh` can archive, sign, notarize, and package a DMG:
 
 ```bash
 export DEVELOPER_ID="Developer ID Application: Your Name (TEAMID)"
@@ -286,23 +326,11 @@ export NOTARY_PROFILE="your-notary-profile"   # or APPLE_ID / APPLE_ID_PASSWORD 
 ./scripts/release.sh Release
 ```
 
-To build locally without notarization:
-
-```bash
-SKIP_NOTARIZE=1 ./scripts/release.sh Debug
-```
-
-Manual steps (also covered by the script):
-
-1. Archive in Xcode with a Developer ID certificate
-2. Notarize via `xcrun notarytool`
-3. Package as `.dmg` using `hdiutil`
-4. Host on GitHub Releases
-
 ### Prerequisites for Users
+
 - macOS 14+
 - Ollama installed and running (`brew install ollama && ollama serve`)
-- At least one model pulled (app should suggest `llama3.2:1b` on first launch if none found)
+- At least one model pulled (app suggests `llama3.2:1b` on first launch if none found)
 
 ---
 
