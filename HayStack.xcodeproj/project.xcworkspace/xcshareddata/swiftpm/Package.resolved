@@ -1,0 +1,15 @@
+{
+  "originHash" : "haystack-v1",
+  "pins" : [
+    {
+      "identity" : "hotkey",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/soffes/HotKey",
+      "state" : {
+        "revision" : "a3cf605dea0cc5df32f504f8169346c5a2fe8ac0",
+        "version" : "0.2.1"
+      }
+    }
+  ],
+  "version" : 3
+}

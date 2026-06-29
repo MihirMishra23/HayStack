@@ -1,0 +1,361 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000000000000000000001 /* HayStackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000001 /* HayStackApp.swift */; };
+		A10000000000000000000002 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000002 /* AppDelegate.swift */; };
+		A10000000000000000000003 /* SearchPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000003 /* SearchPanel.swift */; };
+		A10000000000000000000004 /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000004 /* SearchField.swift */; };
+		A10000000000000000000005 /* ResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000005 /* ResultRow.swift */; };
+		A10000000000000000000006 /* ResultsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000006 /* ResultsList.swift */; };
+		A10000000000000000000007 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000007 /* SettingsView.swift */; };
+		A10000000000000000000008 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000008 /* SearchResult.swift */; };
+		A10000000000000000000009 /* SpotlightSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000009 /* SpotlightSearch.swift */; };
+		A1000000000000000000000A /* PathFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000A /* PathFilter.swift */; };
+		A1000000000000000000000B /* MetadataEnricher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000B /* MetadataEnricher.swift */; };
+		A1000000000000000000000C /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000C /* SearchCoordinator.swift */; };
+		A1000000000000000000000D /* OllamaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000D /* OllamaClient.swift */; };
+		A1000000000000000000000E /* RankingPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000E /* RankingPrompt.swift */; };
+		A1000000000000000000000F /* RankedResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000F /* RankedResult.swift */; };
+		A10000000000000000000010 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000010 /* UserSettings.swift */; };
+		A10000000000000000000011 /* HotkeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000011 /* HotkeyManager.swift */; };
+		A10000000000000000000012 /* FileOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000012 /* FileOpener.swift */; };
+		A10000000000000000000013 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000013 /* Extensions.swift */; };
+		A10000000000000000000014 /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = A50000000000000000000001 /* HotKey */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A20000000000000000000001 /* HayStackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HayStackApp.swift; sourceTree = "<group>"; };
+		A20000000000000000000002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A20000000000000000000003 /* SearchPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPanel.swift; sourceTree = "<group>"; };
+		A20000000000000000000004 /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
+		A20000000000000000000005 /* ResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRow.swift; sourceTree = "<group>"; };
+		A20000000000000000000006 /* ResultsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsList.swift; sourceTree = "<group>"; };
+		A20000000000000000000007 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A20000000000000000000008 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		A20000000000000000000009 /* SpotlightSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightSearch.swift; sourceTree = "<group>"; };
+		A2000000000000000000000A /* PathFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathFilter.swift; sourceTree = "<group>"; };
+		A2000000000000000000000B /* MetadataEnricher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataEnricher.swift; sourceTree = "<group>"; };
+		A2000000000000000000000C /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
+		A2000000000000000000000D /* OllamaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OllamaClient.swift; sourceTree = "<group>"; };
+		A2000000000000000000000E /* RankingPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingPrompt.swift; sourceTree = "<group>"; };
+		A2000000000000000000000F /* RankedResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankedResult.swift; sourceTree = "<group>"; };
+		A20000000000000000000010 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		A20000000000000000000011 /* HotkeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyManager.swift; sourceTree = "<group>"; };
+		A20000000000000000000012 /* FileOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileOpener.swift; sourceTree = "<group>"; };
+		A20000000000000000000013 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A20000000000000000000014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A20000000000000000000015 /* HayStack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HayStack.entitlements; sourceTree = "<group>"; };
+		A20000000000000000000016 /* HayStack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HayStack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A30000000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000014 /* HotKey in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A40000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				A40000000000000000000002 /* HayStack */,
+				A40000000000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A40000000000000000000002 /* HayStack */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000001 /* HayStackApp.swift */,
+				A20000000000000000000002 /* AppDelegate.swift */,
+				A40000000000000000000004 /* Views */,
+				A40000000000000000000005 /* Search */,
+				A40000000000000000000006 /* Ranking */,
+				A40000000000000000000007 /* Settings */,
+				A40000000000000000000008 /* Utilities */,
+				A20000000000000000000014 /* Info.plist */,
+				A20000000000000000000015 /* HayStack.entitlements */,
+			);
+			path = HayStack;
+			sourceTree = "<group>";
+		};
+		A40000000000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000016 /* HayStack.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A40000000000000000000004 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000003 /* SearchPanel.swift */,
+				A20000000000000000000004 /* SearchField.swift */,
+				A20000000000000000000005 /* ResultRow.swift */,
+				A20000000000000000000006 /* ResultsList.swift */,
+				A20000000000000000000007 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A40000000000000000000005 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000008 /* SearchResult.swift */,
+				A20000000000000000000009 /* SpotlightSearch.swift */,
+				A2000000000000000000000A /* PathFilter.swift */,
+				A2000000000000000000000B /* MetadataEnricher.swift */,
+				A2000000000000000000000C /* SearchCoordinator.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		A40000000000000000000006 /* Ranking */ = {
+			isa = PBXGroup;
+			children = (
+				A2000000000000000000000D /* OllamaClient.swift */,
+				A2000000000000000000000E /* RankingPrompt.swift */,
+				A2000000000000000000000F /* RankedResult.swift */,
+			);
+			path = Ranking;
+			sourceTree = "<group>";
+		};
+		A40000000000000000000007 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000010 /* UserSettings.swift */,
+				A20000000000000000000011 /* HotkeyManager.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A40000000000000000000008 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000012 /* FileOpener.swift */,
+				A20000000000000000000013 /* Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A60000000000000000000001 /* HayStack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A80000000000000000000003 /* Build configuration list for PBXNativeTarget "HayStack" */;
+			buildPhases = (
+				A60000000000000000000002 /* Sources */,
+				A30000000000000000000001 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HayStack;
+			packageProductDependencies = (
+				A50000000000000000000001 /* HotKey */,
+			);
+			productName = HayStack;
+			productReference = A20000000000000000000016 /* HayStack.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A70000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = A80000000000000000000001 /* Build configuration list for PBXProject "HayStack" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A40000000000000000000001;
+			packageReferences = (
+				A90000000000000000000001 /* XCRemoteSwiftPackageReference "HotKey" */,
+			);
+			productRefGroup = A40000000000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A60000000000000000000001 /* HayStack */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A60000000000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000001 /* HayStackApp.swift in Sources */,
+				A10000000000000000000002 /* AppDelegate.swift in Sources */,
+				A10000000000000000000003 /* SearchPanel.swift in Sources */,
+				A10000000000000000000004 /* SearchField.swift in Sources */,
+				A10000000000000000000005 /* ResultRow.swift in Sources */,
+				A10000000000000000000006 /* ResultsList.swift in Sources */,
+				A10000000000000000000007 /* SettingsView.swift in Sources */,
+				A10000000000000000000008 /* SearchResult.swift in Sources */,
+				A10000000000000000000009 /* SpotlightSearch.swift in Sources */,
+				A1000000000000000000000A /* PathFilter.swift in Sources */,
+				A1000000000000000000000B /* MetadataEnricher.swift in Sources */,
+				A1000000000000000000000C /* SearchCoordinator.swift in Sources */,
+				A1000000000000000000000D /* OllamaClient.swift in Sources */,
+				A1000000000000000000000E /* RankingPrompt.swift in Sources */,
+				A1000000000000000000000F /* RankedResult.swift in Sources */,
+				A10000000000000000000010 /* UserSettings.swift in Sources */,
+				A10000000000000000000011 /* HotkeyManager.swift in Sources */,
+				A10000000000000000000012 /* FileOpener.swift in Sources */,
+				A10000000000000000000013 /* Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AB0000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AB0000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		AB0000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = HayStack/HayStack.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = HayStack/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haystack.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AB0000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = HayStack/HayStack.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = HayStack/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haystack.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A80000000000000000000001 /* Build configuration list for PBXProject "HayStack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB0000000000000000000001 /* Debug */,
+				AB0000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A80000000000000000000003 /* Build configuration list for PBXNativeTarget "HayStack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB0000000000000000000003 /* Debug */,
+				AB0000000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A90000000000000000000001 /* XCRemoteSwiftPackageReference "HotKey" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/soffes/HotKey";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A50000000000000000000001 /* HotKey */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A90000000000000000000001 /* XCRemoteSwiftPackageReference "HotKey" */;
+			productName = HotKey;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = A70000000000000000000001 /* Project object */;
+}
