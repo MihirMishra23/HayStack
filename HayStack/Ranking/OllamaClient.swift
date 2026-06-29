@@ -45,6 +45,10 @@ private struct FlexibleRankEntry: Decodable {
     let reason: String?
 }
 
+private struct StructuredRankingResponse: Decodable {
+    let results: [FlexibleRankEntry]
+}
+
 struct OllamaClient: Sendable {
     let endpoint: String
     let model: String
@@ -118,7 +122,10 @@ struct OllamaClient: Sendable {
             "model": model,
             "prompt": prompt,
             "stream": true,
-            "format": "json",
+            "format": RankingResponseSchema.ollamaFormat,
+            "options": [
+                "temperature": 0,
+            ],
         ]
 
         var request = URLRequest(url: url)
@@ -157,7 +164,6 @@ struct OllamaClient: Sendable {
             }
         }
 
-        print("[HayStack] Raw Ollama response:\n\(accumulated)")
         return try parseRankEntries(from: accumulated)
     }
 
@@ -178,51 +184,29 @@ struct OllamaClient: Sendable {
 
         let decoder = JSONDecoder()
 
-        // Format 1: bare array [{"rank":1,"path":"...","reason":"..."}]
-        if let array = try? decoder.decode([FlexibleRankEntry].self, from: data) {
-            let entries = array.enumerated().compactMap { index, e -> OllamaRankEntry? in
-                guard let path = e.path else { return nil }
-                return OllamaRankEntry(rank: e.rank ?? (index + 1), path: path, reason: e.reason ?? "")
+        if let response = try? decoder.decode(StructuredRankingResponse.self, from: data) {
+            let entries = response.results.enumerated().compactMap { index, entry -> OllamaRankEntry? in
+                guard let path = entry.path else { return nil }
+                return OllamaRankEntry(
+                    rank: entry.rank ?? (index + 1),
+                    path: path,
+                    reason: entry.reason ?? ""
+                )
             }
             if !entries.isEmpty { return entries }
         }
 
-        guard let obj = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else {
-            throw OllamaClientError.parseError
-        }
-
-        // Format 2: object wrapping an array {"results":[...]} or {"rankings":[...]}
-        for value in obj.values {
-            if let arr = value as? [[String: Any]],
-               let arrData = try? JSONSerialization.data(withJSONObject: arr),
-               let flexEntries = try? decoder.decode([FlexibleRankEntry].self, from: arrData) {
-                let entries = flexEntries.enumerated().compactMap { index, e -> OllamaRankEntry? in
-                    guard let path = e.path else { return nil }
-                    return OllamaRankEntry(rank: e.rank ?? (index + 1), path: path, reason: e.reason ?? "")
-                }
-                if !entries.isEmpty { return entries }
+        // Fallback for bare array responses from older Ollama versions.
+        if let array = try? decoder.decode([FlexibleRankEntry].self, from: data) {
+            let entries = array.enumerated().compactMap { index, entry -> OllamaRankEntry? in
+                guard let path = entry.path else { return nil }
+                return OllamaRankEntry(
+                    rank: entry.rank ?? (index + 1),
+                    path: path,
+                    reason: entry.reason ?? ""
+                )
             }
-        }
-
-        // Format 3: numbered keys {"0":{"path":"...","reason":"..."}, "1":{...}, ...}
-        // or single object {"path":"...","reason":"..."}
-        var entries: [OllamaRankEntry] = []
-        for (key, value) in obj {
-            if let dict = value as? [String: Any], let path = dict["path"] as? String {
-                let reason = dict["reason"] as? String ?? ""
-                let rank = Int(key) ?? (dict["rank"] as? Int) ?? entries.count
-                entries.append(OllamaRankEntry(rank: rank + 1, path: path, reason: reason))
-            }
-        }
-        if !entries.isEmpty {
-            return entries.sorted { $0.rank < $1.rank }
-        }
-
-        // Format 4: single flat object {"path":"...","reason":"..."}
-        if let path = obj["path"] as? String {
-            let reason = obj["reason"] as? String ?? ""
-            let rank = obj["rank"] as? Int ?? 1
-            return [OllamaRankEntry(rank: rank, path: path, reason: reason)]
+            if !entries.isEmpty { return entries }
         }
 
         throw OllamaClientError.parseError

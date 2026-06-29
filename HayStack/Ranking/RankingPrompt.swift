@@ -41,18 +41,12 @@ enum RankingPrompt {
         - templates, logs, binaries, databases, or unrelated files
         - paths that look like dependencies or build artifacts
 
-        Return only valid JSON. Do not include markdown fences or commentary.
+        Return only valid JSON matching this schema. Do not include markdown fences or commentary.
 
         JSON format:
-        [
-          {
-            "rank": 1,
-            "path": "/full/path",
-            "reason": "brief reason"
-          }
-        ]
+        \(RankingResponseSchema.promptExample)
 
-        Include every input path exactly once. Use ranks starting at 1.
+        Include every input path exactly once in results. Use ranks starting at 1.
 
         Search results:
         \(jsonString)
